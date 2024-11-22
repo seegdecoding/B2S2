@@ -50,25 +50,4 @@ CerebroVoice/
 - **BBS/HGA/LFS**: Different frequency bands used for the synthesis (Broadband, High Gamma Activity, Low-Frequency Signals).
 
 
-```
-### EEG Preprocessing
-
-**Preprocess and Save Features**:
-To preprocess the EEG data and save the relevant features, you can execute the following Python script:
-```python
-python preprocess_eeg.py
-```
-Moreover, you have the flexibility to modify the code within this script in order to choose different features, such as BBS, HGA, and LFS.
-
-### Mel2wav
-
-**Reconstruct Audio from Synthesis Mel-spectrograms**:
-If you want to reconstruct audio from the synthesized mel-spectrograms, you can use the following Python script:
-```python
-python mel2wav.py
-```
-It should be noted that you need to download the checkpoint of our pretrained model from the link provided below: [Here you should insert the specific link].
-```
-
-
 
