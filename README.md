@@ -69,4 +69,10 @@ CerebroVoice/
 - **BBS/HGA/LFS**: Different frequency bands used for the synthesis (Broadband, High Gamma Activity, Low-Frequency Signals).
 
 
+## **Metrics**
+
+### **Pearson Correlation Coefficient**:
+
+In our evaluation method, the **Pearson correlation coefficient** is calculated on a frame-by-frame basis for each Mel spectrogram. Specifically, for each predicted and ground truth Mel spectrogram, we compute the Pearson correlation coefficient for each frame (T×F), and then average the correlation coefficients across all frames. 
+This method preserves the temporal structure of the Mel spectrograms and avoids the loss of information that can occur when flattening the spectrograms. This frame-by-frame correlation provides a more detailed and accurate evaluation of the predicted spectrograms in the context of brain-to-speech synthesis.
 
