@@ -27,6 +27,25 @@ You can download the dataset from the following links:
 - [Dataset Link](https://zenodo.org/records/13332808)
 - [GitHub Dataset](https://github.com/Brain2Speech2/B2S2)
 
+### EEG Preprocessing
+
+**Preprocess and Save Features**:
+To preprocess the EEG data and save the relevant features, you can execute the following Python script:
+```python
+python preprocess_eeg.py
+```
+Moreover, you have the flexibility to modify the code within this script in order to choose different features, such as BBS, HGA, and LFS.
+
+### Mel2wav
+
+**Reconstruct Audio from Synthesis Mel-spectrograms**:
+If you want to reconstruct audio from the synthesized mel-spectrograms, you can use the following Python script:
+```python
+python mel2wav.py
+```
+It should be noted that you need to download the checkpoint of our pretrained model from the link provided below: 
+The checkpoint file should be placed in the mel2wav/checkpoints/ directory
+
 ### **Dataset Structure**
 The dataset is organized as follows:
 ```bash
