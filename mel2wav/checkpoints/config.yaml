@@ -1,0 +1,17 @@
+base_config:
+  - egs/egs_bases/tts/vocoder/hifigan.yaml
+  - ./base.yaml
+task_cls: tasks.vc.hifigan_task.GSHiFiGANTask
+binary_data_dir: data/binary/en_es_wav
+low_resrc_langs:
+  - name: English
+    commonvoice_name: en
+    phonemizer: en-us
+    lang_id: 1
+use_spk_embed: false
+binarization_args:
+  with_wav: true
+upsample_rates: [ 5,4,4,4 ]
+upsample_kernel_sizes: [ 10,8,8,8 ]
+max_sentences: 48
+val_max_batches: 100
