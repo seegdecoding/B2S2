@@ -44,7 +44,7 @@ If you want to reconstruct audio from the synthesized mel-spectrograms, you can 
 python mel2wav.py
 ```
 It should be noted that you need to download the checkpoint of our pretrained model from the link provided below: 
-The checkpoint file should be placed in the mel2wav/checkpoints/ directory
+The [checkpoint](https://drive.google.com/file/d/1qKT6dofCuIqPtRI43FAPcbS12mj9IrfP/view?usp=sharing) file should be placed in the mel2wav/checkpoints/ directory
 
 ### **Dataset Structure**
 The dataset is organized as follows:
