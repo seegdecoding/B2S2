@@ -10,5 +10,44 @@ To run the experiments and use the dataset, follow these steps to set up the env
 ### **1. Clone the Repository**
 Clone this repository to your local machine:
 ```bash
-git clone https://github.com/YourUsername/CerebroVoice.git
+git clone https://github.com/seegdecoding/B2S2.git
 cd B2S2
+```
+
+### Install Dependencies
+Make sure you have Python 3.7+ installed. It’s recommended to use a virtual environment.
+```bash
+pip install -r requirements.txt
+```
+## **Dataset**
+
+The **CerebroVoice** dataset is available for download. The dataset includes sEEG recordings and their corresponding audio samples for two subjects (Mandarin and English). Each recording contains speech data across various tasks (Mandarin words, English words, and Chinese Mandarin digits).
+
+You can download the dataset from the following links:
+- [Dataset Link](https://zenodo.org/records/13332808)
+- [GitHub Dataset](https://github.com/Brain2Speech2/B2S2)
+
+### **Dataset Structure**
+The dataset is organized as follows:
+```bash
+CerebroVoice/
+    ├── Subject1/
+    │   ├── BBS/
+    │   ├── HGA/
+    │   ├── LFS/
+    │   ├── MEL/
+    │   └── SEEG/
+    ├── Subject2/
+    │   ├── BBS/
+    │   ├── HGA/
+    │   ├── LFS/
+    │   ├── MEL/
+    │   └── SEEG/
+    └── README.md
+```
+- **MEL**: Mel-spectrograms of the audio.
+- **SEEG**: Preprocessed sEEG signals.
+- **BBS/HGA/LFS**: Different frequency bands used for the synthesis (Broadband, High Gamma Activity, Low-Frequency Signals).
+
+
+
