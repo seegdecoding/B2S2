@@ -68,11 +68,8 @@ CerebroVoice/
 - **SEEG**: Preprocessed sEEG signals.
 - **BBS/HGA/LFS**: Different frequency bands used for the synthesis (Broadband, High Gamma Activity, Low-Frequency Signals).
 
-
-## **Metrics**
-
-### **Pearson Correlation Coefficient**:
-
-In our evaluation method, the **Pearson correlation coefficient** is calculated on a frame-by-frame basis for each Mel spectrogram. Specifically, for each predicted and ground truth Mel spectrogram, we compute the Pearson correlation coefficient for each frame (T×F), and then average the correlation coefficients across all frames. 
-This method preserves the temporal structure of the Mel spectrograms and avoids the loss of information that can occur when flattening the spectrograms. This frame-by-frame correlation provides a more detailed and accurate evaluation of the predicted spectrograms in the context of brain-to-speech synthesis.
-
+## others
+We would like to clarify a key difference in the computation of the Pearson correlation coefficient between our evaluation method and that used in Brain Talker. In Brain Talker, the Pearson correlation is calculated by first flattening both the predicted and ground truth Mel spectrograms, which have dimensions T×F, into one-dimensional arrays of size 1×(T×F). The correlation is then calculated between these flattened arrays, and the resulting coefficients are averaged across all samples.
+In contrast, our evaluation method calculates the Pearson correlation by comparing the predicted and true frequencies at each corresponding time point. For each sample, we compute the Pearson correlation coefficients across the frequency dimension (1×F) for each time step, performing this comparison T times. These coefficients are averaged over the T time steps, and then averaged again across all samples to derive the overall Pearson correlation.
+We believe that for Mel spectrograms, which inherently possess a structured frequency component, computing the Pearson correlation column-wise is more appropriate. This approach evaluates the alignment of the predicted and ground truth spectrograms at the frequency channel level, providing a more rigorous assessment of the model's performance. While adopting the calculation method from BrainTalker[2] would also yield high Pearson correlation coefficients for our results, it is less indicative of the fidelity of Mel spectrograms in capturing detailed frequency alignments.
+To illustrate, we have provided scripts for both testing methods on our [GitHub](https://github.com/seegdecoding/B2S2) repository under Calculate_Mel.py. When applied to Samples_GT_Mel.npy and Samples_Predict_Mel.npy, the Pearson correlation calculated using the BrainTalker method resulted in a coefficient of 0.848, whereas our method yielded a coefficient of 0.644.
