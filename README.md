@@ -25,7 +25,10 @@ The **CerebroVoice** dataset is available for download. The dataset includes sEE
 
 You can download the dataset from the following links:
 - [Dataset Link](https://zenodo.org/records/13332808)
-- [GitHub Dataset](https://github.com/Brain2Speech2/B2S2)
+
+
+For the newly added participant data, please visit: **https://zenodo.org/records/14179222**
+For the sEEG data encompassing all participants, please visit: **https://zenodo.org/records/13332808**
 
 ### EEG Preprocessing
 
